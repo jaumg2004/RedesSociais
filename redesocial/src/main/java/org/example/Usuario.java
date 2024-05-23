@@ -27,4 +27,12 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public HashSet<RedeSocial> getRedeSociais() {
+        return redeSociais;
+    }
+
+    public void setRedeSociais(HashSet<RedeSocial> redeSociais) {
+        this.redeSociais = redeSociais;
+    }
 }

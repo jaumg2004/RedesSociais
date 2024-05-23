@@ -1,11 +1,12 @@
 package org.example;
 
-public class Facebook extends RedeSocial implements Compartilhamento, VideoConferencia{
+public class Facebook extends RedeSocial implements Compartilhamento, VideoConferencia, Comparable<Facebook>{
 
 
     public Facebook(String senha, int numAmigos) {
         super(senha, numAmigos);
     }
+
 
     @Override
     public void compartilhar() {
@@ -30,5 +31,13 @@ public class Facebook extends RedeSocial implements Compartilhamento, VideoConfe
     @Override
     public void fazStreaming() {
         System.out.println("abriu uma live pelo Facebook");
+    }
+
+    @Override
+    public int compareTo(Facebook facebook) {
+        if(facebook.senha==this.senha)
+            return 0;
+        else
+            return 1;
     }
 }

@@ -1,6 +1,6 @@
 package org.example;
 
-public class Instagram extends RedeSocial{
+public class Instagram extends RedeSocial implements Comparable<Instagram>{
 
     public Instagram(String senha, int numAmigos) {
         super(senha, numAmigos);
@@ -19,5 +19,13 @@ public class Instagram extends RedeSocial{
     @Override
     public void postarComentario() {
         System.out.println("postou um comentário no Instagram");
+    }
+
+    @Override
+    public int compareTo(Instagram instagram) {
+        if(instagram.senha==this.senha)
+            return 0;
+        else
+            return 1;
     }
 }

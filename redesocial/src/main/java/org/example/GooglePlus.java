@@ -1,6 +1,6 @@
 package org.example;
 
-public class GooglePlus extends RedeSocial implements VideoConferencia, Compartilhamento{
+public class GooglePlus extends RedeSocial implements VideoConferencia, Compartilhamento, Comparable<GooglePlus>{
 
     public GooglePlus(String senha, int numAmigos) {
         super(senha, numAmigos);
@@ -29,5 +29,13 @@ public class GooglePlus extends RedeSocial implements VideoConferencia, Comparti
     @Override
     public void fazStreaming() {
         System.out.println("abriu uma live no Google+");
+    }
+
+    @Override
+    public int compareTo(GooglePlus google) {
+        if(google.senha==this.senha)
+            return 0;
+        else
+            return 1;
     }
 }

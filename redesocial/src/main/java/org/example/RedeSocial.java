@@ -10,6 +10,22 @@ public abstract class RedeSocial {
         this.numAmigos = numAmigos;
     }
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public int getNumAmigos() {
+        return numAmigos;
+    }
+
+    public void setNumAmigos(int numAmigos) {
+        this.numAmigos = numAmigos;
+    }
+
     public abstract void postarFoto();
     public abstract void postarVideo();
     public abstract void postarComentario();

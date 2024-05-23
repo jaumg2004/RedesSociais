@@ -1,6 +1,6 @@
 package org.example;
 
-public class Twitter extends RedeSocial implements Compartilhamento{
+public class Twitter extends RedeSocial implements Compartilhamento, Comparable<Twitter>{
 
     public Twitter(String senha, int numAmigos) {
         super(senha, numAmigos);
@@ -24,5 +24,13 @@ public class Twitter extends RedeSocial implements Compartilhamento{
     @Override
     public void postarComentario() {
         System.out.println("postou um comentário no Twitter");
+    }
+
+    @Override
+    public int compareTo(Twitter twitter) {
+        if(twitter.senha==this.senha)
+            return 0;
+        else
+            return 1;
     }
 }
