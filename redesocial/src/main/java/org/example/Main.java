@@ -1,7 +1,7 @@
 package org.example;
 
-import org.example.Exception.CheckedException;
-import org.example.Exception.UncheckedException;
+import org.example.Exception.ChecagemDeAcesso;
+import org.example.Exception.ChecagemDeUsuario;
 
 import java.util.HashSet;
 import java.util.Scanner;
@@ -45,7 +45,7 @@ public class Main {
                             System.out.println("Senha existente! Digite outra");
                             password1 = getPasswordFromUser(scanner);
                         }
-                        redeSocialHashSet.add(insta);
+                        Usuario.criarUsuario(usuario, insta);
 
                         int opcao1 = 0;
                         System.out.println("O que deseja fazer?");
@@ -87,7 +87,7 @@ public class Main {
                             System.out.println("Senha existente! Digite outra");
                             password2 = getPasswordFromUser(scanner);
                         }
-                        redeSocialHashSet.add(face);
+                        Usuario.criarUsuario(usuario, face);
 
                         int opcao2 = 0;
                         System.out.println("O que deseja fazer?");
@@ -139,7 +139,7 @@ public class Main {
                             System.out.println("Senha existente! Digite outra");
                             password3 = getPasswordFromUser(scanner);
                         }
-                        redeSocialHashSet.add(googlePlus);
+                        Usuario.criarUsuario(usuario, googlePlus);
 
                         int opcao3 = 0;
                         System.out.println("O que deseja fazer?");
@@ -191,7 +191,7 @@ public class Main {
                             System.out.println("Senha existente! Digite outra");
                             password4 = getPasswordFromUser(scanner);
                         }
-                        redeSocialHashSet.add(twitter);
+                        Usuario.criarUsuario(usuario, twitter);
 
                         int opcao4 = 0;
                         System.out.println("O que deseja fazer?");
@@ -236,10 +236,11 @@ public class Main {
                 menu = scanner.nextInt();
                 scanner.nextLine();
             }
-        } catch (CheckedException e) {
-            System.out.println("Exceção checked capturada: " + e.getMessage());
-        } catch (UncheckedException e) {
-            System.out.println("Exceção unchecked capturada: " + e.getMessage());
+        }
+        catch (ChecagemDeAcesso e) {
+            System.out.println("Acesso não permitido: " + e.getMessage());
+        } catch (ChecagemDeUsuario e) {
+            throw new RuntimeException(e);
         }
 
     }
